@@ -113,7 +113,7 @@ function App() {
               <span
                 id="return-date"
                 tabIndex={0}
-                className="font-bold text-[#047d4f]"
+                className="font-bold text-[#004C45]"
               >
                 {returnDate}
               </span>
