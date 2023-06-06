@@ -119,10 +119,10 @@ function App() {
               </span>
             </p>
             <p className="text-sm italic">
-              Note: Papers submitted after 5:00 pm EST are recognized as
-              “received” on the following business day. Please plan accordingly,
-              as this may impact your turnaround time. Lesley-observed holidays
-              may also impact this estimate.
+              Note: Papers submitted after 5:00 pm EST or on weekends are
+              recognized as “received” on the following business day. Please
+              plan accordingly, as this may impact your turnaround time.
+              Lesley-observed holidays may also impact this estimate.
             </p>
           </div>
         </section>
