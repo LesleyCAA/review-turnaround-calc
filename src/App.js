@@ -124,9 +124,6 @@ function App() {
               as this may impact your turnaround time. Lesley-observed holidays
               may also impact this estimate.
             </p>
-            <p className="text-sm italic">
-              Note: Lesley-observed holidays may impact this estimate.
-            </p>
           </div>
         </section>
       </main>
