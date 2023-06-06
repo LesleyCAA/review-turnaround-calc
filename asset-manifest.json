@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/review-turnaround-calc/static/css/main.45dd504b.css",
-    "main.js": "/review-turnaround-calc/static/js/main.5830f282.js",
+    "main.js": "/review-turnaround-calc/static/js/main.00c9cdf4.js",
     "static/js/787.00f3c9aa.chunk.js": "/review-turnaround-calc/static/js/787.00f3c9aa.chunk.js",
     "static/media/Lesley.svg": "/review-turnaround-calc/static/media/Lesley.c3a566af81c0fcbee438d4d36a00c53e.svg",
     "index.html": "/review-turnaround-calc/index.html",
     "main.45dd504b.css.map": "/review-turnaround-calc/static/css/main.45dd504b.css.map",
-    "main.5830f282.js.map": "/review-turnaround-calc/static/js/main.5830f282.js.map",
+    "main.00c9cdf4.js.map": "/review-turnaround-calc/static/js/main.00c9cdf4.js.map",
     "787.00f3c9aa.chunk.js.map": "/review-turnaround-calc/static/js/787.00f3c9aa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.45dd504b.css",
-    "static/js/main.5830f282.js"
+    "static/js/main.00c9cdf4.js"
   ]
 }
