@@ -47,14 +47,14 @@ function App() {
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <header>
-        <div className="bg-white pl-[110px] py-[10px]">
+        <div className="bg-white pl-[20px] lg:pl-[110px] py-[10px]">
           <img src={Lesley} width={120}></img>
         </div>
         <div id="container" className="bg-[#004b44] min-h-[120px]">
           <div id="triangle"></div>
           <div className="flex">
             <div className="w-full pt-[40px]">
-              <h1 className="pl-[110px] text-4xl text-white">
+              <h1 className="pl-[20px] lg:pl-[110px] text-2xl lg:text-4xl text-white">
                 Review Turnaround Calculator
               </h1>
             </div>
@@ -62,8 +62,8 @@ function App() {
         </div>
       </header>
 
-      <main className="flex self-center  items-center flex-col z-10">
-        <section className="my-16 mb-8 w-[900px] py-12 px-[90px] text-[22px] bg-gray-200">
+      <main className="flex self-center px-4 items-center flex-col">
+        <section className="my-8 lg:my-16 mb-8 lg:w-[900px] py-12 px-6 lg:px-12 text-[18px] lg:text-[22px] bg-gray-200">
           <FormControl className="space-y-10 text-left w-full">
             <div className="flex items-center justify-between">
               <p className="pr-6">How long is your paper?</p>
@@ -82,7 +82,6 @@ function App() {
               <p className="pr-6">
                 When will you submit your paper for review?
               </p>
-
               <DatePicker
                 onChange={(newValue) => setDueDate(newValue)}
                 label="Submission Date"
@@ -103,8 +102,8 @@ function App() {
             </div>
           </FormControl>
         </section>
-        <section className="w-[900px]">
-          <div className="m-0 w-full space-y-4">
+        <section className="lg:w-[900px] px-4 mb-4">
+          <div className="space-y-4">
             <p>
               Based on your page count and submission date, we estimate a return
               date of:{" "}
