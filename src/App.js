@@ -46,9 +46,12 @@ function App() {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <a className="skip-to-content-link" href="#main">
+        Skip to content
+      </a>
       <header>
         <div className="bg-white pl-[20px] lg:pl-[110px] py-[10px]">
-          <img src={Lesley} width={120}></img>
+          <img alt="Lesley University logo" src={Lesley} width={120}></img>
         </div>
         <div id="container" className="bg-[#004b44] min-h-[120px]">
           <div id="triangle"></div>
@@ -62,7 +65,7 @@ function App() {
         </div>
       </header>
 
-      <main className="flex self-center px-4 items-center flex-col">
+      <main id="main" className="flex self-center px-4 items-center flex-col">
         <section className="my-8 lg:my-16 mb-8 lg:w-[900px] py-12 px-6 lg:px-12 text-[18px] lg:text-[22px] bg-gray-200">
           <FormControl className="space-y-10 text-left w-full">
             <div className="flex items-center justify-between">
@@ -107,7 +110,13 @@ function App() {
             <p>
               Based on your page count and submission date, we estimate a return
               date of:{" "}
-              <span className="font-bold text-[#02945d]">{returnDate}</span>
+              <span
+                id="return-date"
+                tabIndex={0}
+                className="font-bold text-[#02945d]"
+              >
+                {returnDate}
+              </span>
             </p>
             <p className="text-sm italic">
               Note: Papers submitted after 5:00 pm EST are recognized as
