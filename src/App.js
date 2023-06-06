@@ -31,7 +31,7 @@ function App() {
 
     date.setHours(17, 0, 0, 0);
 
-    setReturnDate(format(date, "MM/dd/yyyy h:mm aa")); // add 5pm to this
+    setReturnDate(format(date, "MM/dd/yyyy h:mm aa"));
   };
 
   const calculateReturnDate = () => {
@@ -46,76 +46,83 @@ function App() {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <div className="font-sans flex flex-col h-screen">
-        <header>
-          <div className="bg-white pl-[110px] py-[10px]">
-            <img src={Lesley} width={120}></img>
-          </div>
-          <div id="container" className="bg-[#004b44] min-h-[120px]">
-            <div id="triangle"></div>
-            <div className="flex">
-              <div className="w-full pt-[40px]">
-                <h1 className="pl-[110px] text-4xl text-white">
-                  Review Turnaround Calculator
-                </h1>
-              </div>
+      <header>
+        <div className="bg-white pl-[110px] py-[10px]">
+          <img src={Lesley} width={120}></img>
+        </div>
+        <div id="container" className="bg-[#004b44] min-h-[120px]">
+          <div id="triangle"></div>
+          <div className="flex">
+            <div className="w-full pt-[40px]">
+              <h1 className="pl-[110px] text-4xl text-white">
+                Review Turnaround Calculator
+              </h1>
             </div>
           </div>
-        </header>
+        </div>
+      </header>
 
-        <main className="flex self-center flex-col z-10">
-          <section className="my-16 mb-8 w-[900px] py-12 px-[90px] text-[22px] bg-gray-200">
-            <FormControl className="space-y-10 text-left w-full">
-              <div className="flex items-center justify-between">
-                <p className="pr-6">How long is your paper?</p>
-                <TextField
-                  type="number"
-                  id="pages"
-                  label="Pages"
-                  variant="outlined"
-                  onChange={(event) => {
-                    setPages(event.target.value);
-                  }}
-                />
-              </div>
-
-              <div className="flex items-center justify-between">
-                <p className="pr-6">When will you submit for review?</p>
-                <DatePicker
-                  onChange={(newValue) => setDueDate(newValue)}
-                  label="Submission Date"
-                />
-              </div>
-
-              <div className="flex justify-end w-full">
-                <ThemeProvider theme={theme}>
-                  <Button
-                    disabled={pages > 0 && dueDate ? false : true}
-                    color="primary"
-                    variant="contained"
-                    onClick={calculateReturnDate}
-                  >
-                    Calculate
-                  </Button>
-                </ThemeProvider>
-              </div>
-            </FormControl>
-          </section>
-          <section>
-            <div>
-              <p>
-                Based on your page count and submission date, we estimate a
-                return date of:{" "}
-                <span className="font-bold text-[#02945d]">{returnDate}</span>
-              </p>
-              <p className="text-sm italic mt-4">
-                Note: Lesley-observed holidays may impact this estimate.
-              </p>
+      <main className="flex self-center  items-center flex-col z-10">
+        <section className="my-16 mb-8 w-[900px] py-12 px-[90px] text-[22px] bg-gray-200">
+          <FormControl className="space-y-10 text-left w-full">
+            <div className="flex items-center justify-between">
+              <p className="pr-6">How long is your paper?</p>
+              <TextField
+                type="number"
+                id="pages"
+                label="Pages"
+                variant="outlined"
+                onChange={(event) => {
+                  setPages(event.target.value);
+                }}
+              />
             </div>
-          </section>
-        </main>
-        <footer className="min-h-[20px]"></footer>
-      </div>
+
+            <div className="flex items-center justify-between">
+              <p className="pr-6">
+                When will you submit your paper for review?
+              </p>
+
+              <DatePicker
+                onChange={(newValue) => setDueDate(newValue)}
+                label="Submission Date"
+              />
+            </div>
+
+            <div className="flex justify-end w-full">
+              <ThemeProvider theme={theme}>
+                <Button
+                  disabled={pages > 0 && dueDate ? false : true}
+                  color="primary"
+                  variant="contained"
+                  onClick={calculateReturnDate}
+                >
+                  Calculate
+                </Button>
+              </ThemeProvider>
+            </div>
+          </FormControl>
+        </section>
+        <section className="w-[900px]">
+          <div className="m-0 w-full space-y-4">
+            <p>
+              Based on your page count and submission date, we estimate a return
+              date of:{" "}
+              <span className="font-bold text-[#02945d]">{returnDate}</span>
+            </p>
+            <p className="text-sm italic">
+              Note: Papers submitted after 5:00 pm EST are recognized as
+              “received” on the following business day. Please plan accordingly,
+              as this may impact your turnaround time. Lesley-observed holidays
+              may also impact this estimate.
+            </p>
+            <p className="text-sm italic">
+              Note: Lesley-observed holidays may impact this estimate.
+            </p>
+          </div>
+        </section>
+      </main>
+      <footer className="min-h-[20px]"></footer>
     </LocalizationProvider>
   );
 }
