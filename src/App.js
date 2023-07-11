@@ -6,7 +6,7 @@ import { TextField, FormControl, Button } from "@mui/material";
 import Lesley from "./images/Lesley.svg";
 import { DatePicker } from "@mui/x-date-pickers";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { addBusinessDays, format } from "date-fns";
+import { addBusinessDays, format, isWeekend, nextMonday } from "date-fns";
 
 function App() {
   const theme = createTheme({
@@ -22,12 +22,20 @@ function App() {
 
   const [pages, setPages] = useState(0);
 
+  // aka the submission date
   const [dueDate, setDueDate] = useState();
 
   const [returnDate, setReturnDate] = useState();
 
   const setDate = (days) => {
-    const date = addBusinessDays(new Date(dueDate), days);
+    let submissonDate = new Date(dueDate);
+
+    // if the submission date is over the weekend, push it to the next Monday
+    if (isWeekend(submissonDate)) {
+      submissonDate = nextMonday(submissonDate);
+    }
+
+    const date = addBusinessDays(submissonDate, days);
 
     date.setHours(17, 0, 0, 0);
 
